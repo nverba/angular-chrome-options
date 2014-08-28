@@ -1,4 +1,5 @@
-ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOptionsMainController($scope) {
+ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOptionsMainController($scope, $window) {
+
 
 
 });

@@ -1,7 +1,7 @@
 angular.module('optionsService', ['optionsConfig'])
   .factory('Options',
-    function () {
+    function ($window, config) {
 
-      return { test: 'test' };
+      return {};
 
     });
