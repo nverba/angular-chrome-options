@@ -4,7 +4,7 @@ var karma = require('karma').server;
 var karmaCommonConf = {
 
   browsers: ['Chrome'],
-  frameworks: ['mocha', 'chai', 'chai-as-promised'],
+  frameworks: ['mocha', 'chai', 'chai-as-promised', 'sinon-chai'],
   autoWatch: true,
   files: [
     '../../bower_components/angular/angular.js',
