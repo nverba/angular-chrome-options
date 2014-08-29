@@ -45,11 +45,33 @@ describe("optionsService", function () {
 
   describe("app init:", function () {
 
-    it("maps defaults into chrome.local.storage", function () {
+    it.skip("should return a promise for the .ready function", function () {
+
+    });
+
+    it.skip("maps defaults into chrome.local.storage", function () {
 
       sinon.assert.calledWith(spyStorageSet, { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5 }});
 
     });
+
+    it.skip("exposes a category object", function () {
+
+    });
   });
+
+  describe("save/update:", function () {
+
+    it.skip("pushes changes to storage.local when the scope is updated", function () {
+
+    });
+
+    it.skip("can update user style sheets on theme selection", function () {
+
+    });
+  });
+
+
+
 
 });
