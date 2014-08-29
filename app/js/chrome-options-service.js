@@ -21,6 +21,12 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
         return response;
       };
 
+      function objectify(key, value) {
+        var obj = {};
+        obj[key] = value;
+        return obj;
+      }
+
       return optionsService;
 
     });
