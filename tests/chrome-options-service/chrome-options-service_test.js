@@ -20,19 +20,19 @@ describe("optionsService", function () {
   var exampleConfig = [
     { page_id: 'TestPage 1', categories:
       [
-        { category_id: 'TestCat A', options: [{ option_id: 'Option A1', default: 4, type: 'number', min: 1, max: 8 }]},
-        { category_id: 'TestCat B', options: [{ option_id: 'Option B1', default: 5, type: 'number', min: 1, max: 8 }]}
+        { category_id: 'TestCat A', options: [{ option_id: 'Option A1', default: 4, type: 'number' }]},
+        { category_id: 'TestCat B', options: [{ option_id: 'Option B1', default: 5, type: 'number' }, { option_id: 'Option B2', default: 6, type: 'number' }]}
       ]
     },
     { page_id: 'TestPage 2', categories:
       [
-        { category_id: 'TestCat C', options: [{ option_id: 'Option C1', default: 4, type: 'number', min: 1, max: 8 }]},
-        { category_id: 'TestCat D', options: [{ option_id: 'Option D1', alias: 'option_e1', default: 5, type: 'number', min: 1, max: 8 }]}
+        { category_id: 'TestCat C', options: [{ option_id: 'Option C1', default: 4, type: 'number' }]},
+        { category_id: 'TestCat D', options: [{ option_id: 'Option D1', alias: 'option_e1', default: 5, type: 'number' }]}
       ]
     }
   ];
 
-  var expectedDefaults = { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5 }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
+  var expectedDefaults = { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
 
   beforeEach(module('optionsService'));
 
