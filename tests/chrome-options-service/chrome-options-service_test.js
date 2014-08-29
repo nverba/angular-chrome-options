@@ -5,17 +5,17 @@ describe("optionsService", function () {
 
   var options;
 
-  var storageAPI = { chrome: { storage: { local: {
+  var storageAPI = {
     set:    function () {},
     get:    function () {},
     remove: function () {},
     clear:  function () {}
-  }}}};
+  };
 
-  var spyStorageSet    = sinon.spy(storageAPI.chrome.storage.local, "set");
-  var spyStorageGet    = sinon.spy(storageAPI.chrome.storage.local, "get");
-  var spyStorageRemove = sinon.spy(storageAPI.chrome.storage.local, "remove");
-  var spyStorageClear  = sinon.spy(storageAPI.chrome.storage.local, "clear");
+  var spyStorageSet    = sinon.spy(storageAPI, "set");
+  var spyStorageGet    = sinon.spy(storageAPI, "get");
+  var spyStorageRemove = sinon.spy(storageAPI, "remove");
+  var spyStorageClear  = sinon.spy(storageAPI, "clear");
 
   beforeEach(module('optionsService'));
 
@@ -26,7 +26,7 @@ describe("optionsService", function () {
         { page_id: 'TestPage A', sections:
           [
             { category_id: 'TestCat A', options: [{ option_id: 'Option A1', default: 4, type: 'number', min: 1, max: 8 }]},
-            { category_id: 'TestCat B', options: [{ option_id: 'Option B1', default: 4, type: 'number', min: 1, max: 8 }]}
+            { category_id: 'TestCat B', options: [{ option_id: 'Option B1', default: 5, type: 'number', min: 1, max: 8 }]}
           ]
         }
       ]);
@@ -35,7 +35,7 @@ describe("optionsService", function () {
 
   beforeEach(function () {
     module(function($provide){
-      $provide.value('$window', storageAPI);
+      $provide.value('$window', { chrome: { storage: { local: storageAPI }}});
     });
   });
 
@@ -43,10 +43,11 @@ describe("optionsService", function () {
     options = _Options_;
   }));
 
-  describe("on load", function () {
+  describe("app init:", function () {
 
-    it("loads maps defaults into chrome.local.storage", function () {
+    it("maps defaults into chrome.local.storage", function () {
 
+      sinon.assert.calledWith(spyStorageSet, { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5 }});
 
     });
   });
