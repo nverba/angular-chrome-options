@@ -26,7 +26,8 @@
   "dependencies": {
     "angular": "~1.2.23",
     "chrome-bootstrap": "~1.4.0",
-    "angular-mocks": "~1.2.23"
+    "angular-mocks": "~1.2.23",
+    "angular-resolver": "git@github.com:nverba/angular-resolver.git"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.23"
