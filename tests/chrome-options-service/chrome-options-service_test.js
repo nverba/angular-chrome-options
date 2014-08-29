@@ -5,6 +5,18 @@ describe("optionsService", function () {
 
   var options;
 
+  var storageAPI = { chrome: { storage: { local: {
+    set:    function () {},
+    get:    function () {},
+    remove: function () {},
+    clear:  function () {}
+  }}}};
+
+  var spyStorageSet    = sinon.spy(storageAPI.chrome.storage.local, "set");
+  var spyStorageGet    = sinon.spy(storageAPI.chrome.storage.local, "get");
+  var spyStorageRemove = sinon.spy(storageAPI.chrome.storage.local, "remove");
+  var spyStorageClear  = sinon.spy(storageAPI.chrome.storage.local, "clear");
+
   beforeEach(module('optionsService'));
 
   beforeEach(function () {
@@ -23,17 +35,7 @@ describe("optionsService", function () {
 
   beforeEach(function () {
     module(function($provide){
-      $provide.value('$window', function () {
-        return  {
-          chrome:{ storage:{ local: {
-            set:    sinon.spy(),
-            get:    sinon.spy(),
-            remove: sinon.spy(),
-            clear:  sinon.spy()
-          }}},
-          addEventListener: sinon.spy()
-        };
-      });
+      $provide.value('$window', storageAPI);
     });
   });
 
@@ -43,7 +45,7 @@ describe("optionsService", function () {
 
   describe("on load", function () {
 
-    it("loads defaults into chrome.local.storage", function () {
+    it("loads maps defaults into chrome.local.storage", function () {
 
 
     });
