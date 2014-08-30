@@ -3,7 +3,7 @@
 describe("optionsService", function () {
   "use strict";
 
-  var options;
+  var options, $rootScope, digest;
 
   var storageAPI = {
     set:    function () {},
@@ -11,11 +11,6 @@ describe("optionsService", function () {
     remove: function () {},
     clear:  function () {}
   };
-
-  var spyStorageSet    = sinon.spy(storageAPI, "set");
-  var spyStorageGet    = sinon.spy(storageAPI, "get");
-  var spyStorageRemove = sinon.spy(storageAPI, "remove");
-  var spyStorageClear  = sinon.spy(storageAPI, "clear");
 
   var exampleConfig = [
     { page_id: 'TestPage 1', categories:
@@ -34,6 +29,12 @@ describe("optionsService", function () {
 
   var expectedDefaults = { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
 
+  var spyStorageSet    = sinon.spy(storageAPI, "set");
+  var spyStorageGet    = sinon.stub(storageAPI, "get").callsArgWith(1, { 'clearCodeOptions': expectedDefaults });
+  var spyStorageRemove = sinon.spy(storageAPI, "remove");
+  var spyStorageClear  = sinon.spy(storageAPI, "clear");
+
+
   beforeEach(module('optionsService'));
 
   beforeEach(function () {
@@ -48,13 +49,22 @@ describe("optionsService", function () {
     });
   });
 
-  beforeEach(inject(function(_options_) {
+  beforeEach(inject(function(_options_, _$rootScope_) {
     options = _options_;
+    $rootScope = _$rootScope_;
+
+    digest = function () {
+      setTimeout(function () {
+        $rootScope.$digest();
+      }, 0);
+    };
   }));
 
   describe("app init:", function () {
 
-    it.skip("should return a promise for the .ready function", function () {
+    it("should return a promise for the .ready function", function () {
+
+      digest();
 
       return options.ready.should.be.fulfilled;
 

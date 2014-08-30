@@ -4,8 +4,6 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
 
       var optionsService = {};
 
-      //optionsService.ready = Resolver.deferr();
-
       optionsService.mapDefaults = function mapDefaults(configObject) {
         var response = {};
         angular.forEach(configObject, function (page) {
@@ -21,11 +19,14 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
         return response;
       };
 
-      function objectify(key, value) {
-        var obj = {};
-        obj[key] = value;
-        return obj;
+      function initOptions(deferred) {
+        $window.chrome.storage.local.get({ 'clearCodeOptions': optionsService.mapDefaults(config) }, function (response) {
+          optionsService.categories = response.clearCodeOptions;
+          deferred.resolve();
+        });
       }
+
+      optionsService.ready = Resolver.deferr(initOptions);
 
       return optionsService;
 
