@@ -62,7 +62,7 @@ describe("optionsService", function () {
 
   describe("app init:", function () {
 
-    it("should return a promise for the .ready function", function () {
+    it(".ready should return a promise", function () {
 
       digest();
 
@@ -70,9 +70,9 @@ describe("optionsService", function () {
 
     });
 
-    it.skip("maps defaults into chrome.local.storage", function () {
+    it("map defaults into chrome.local.storage", function () {
 
-      sinon.assert.calledWith(spyStorageSet, { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5 }});
+      sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': expectedDefaults });
 
     });
 
@@ -83,7 +83,7 @@ describe("optionsService", function () {
 
   describe("functions:", function () {
 
-    it("maps a config array to object of defaults, substituting aliased option names", function () {
+    it("maps config to categories of default values, substituting aliased option names", function () {
 
       assert.deepEqual(options.mapDefaults(exampleConfig), expectedDefaults);
 

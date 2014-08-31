@@ -1,6 +1,6 @@
 angular.module('optionsService', ['optionsConfig', 'angularResolver'])
   .factory('options',
-    function ($window, config, Resolver) {
+    function ($window, $rootScope, config, Resolver) {
 
       var optionsService = {};
 
@@ -25,6 +25,10 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
           deferred.resolve();
         });
       }
+
+      $rootScope.$watch( function (){ return optionsService.categories; }, function (newValue, oldValue) {
+        $window.chrome.storage.local.set({ 'clearCodeOptions': optionsService.categories });
+      }, true);
 
       optionsService.ready = Resolver.deferr(initOptions);
 
