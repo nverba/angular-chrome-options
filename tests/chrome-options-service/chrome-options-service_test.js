@@ -28,6 +28,7 @@ describe("optionsService", function () {
   ];
 
   var expectedDefaults = { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
+  var updatedDefaults = { testcat_a: { option_a1: 100 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
 
   var spyStorageSet    = sinon.spy(storageAPI, "set");
   var spyStorageGet    = sinon.stub(storageAPI, "get").callsArgWith(1, { 'clearCodeOptions': expectedDefaults });
@@ -99,8 +100,17 @@ describe("optionsService", function () {
 
   describe("save/update:", function () {
 
-    it.skip("pushes changes to storage.local when the scope is updated", function () {
+    it("push option updates to local storage", function (done) {
 
+      digest();
+
+      options.ready.then(function () {
+        $rootScope.options = options.categories;
+
+        sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': updatedDefaults });
+
+        done();
+      });
     });
 
     it.skip("can update user style sheets on theme selection", function () {
