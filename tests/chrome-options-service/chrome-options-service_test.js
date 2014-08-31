@@ -107,6 +107,8 @@ describe("optionsService", function () {
       options.ready.then(function () {
         $rootScope.options = options.categories;
 
+        $rootScope.options.testcat_a.option_a1 = 100;
+
         sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': updatedDefaults });
 
         done();
