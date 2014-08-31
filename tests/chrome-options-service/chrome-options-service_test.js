@@ -76,7 +76,13 @@ describe("optionsService", function () {
 
     });
 
-    it.skip("exposes a category object", function () {
+    it("exposes a category object", function (done) {
+
+      digest();
+
+      options.ready.then(function () {
+        assert.deepEqual(options.categories, {});
+      });
 
     });
   });
