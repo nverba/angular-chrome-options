@@ -81,7 +81,8 @@ describe("optionsService", function () {
       digest();
 
       options.ready.then(function () {
-        assert.deepEqual(options.categories, {});
+        assert.deepEqual(options.categories, expectedDefaults);
+        done();
       });
 
     });
