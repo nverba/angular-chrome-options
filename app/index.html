@@ -27,14 +27,15 @@
     </div>
     <div class="mainview view">
       <div ng-repeat="page in config" ng-class="{ 'selected': page.id === page_id }" page-id="page.id">
-        <headers>
+        <header>
           <h1>{{ page.id }}<small ng-bind="page.subhead"></small></h1>
-        </headers>
+        </header>
         <div class="content">
           <div ng-repeat="category in page.categories">
-            <headers>
+            <header>
               <h1>{{ category.id }}<small ng-bind="category.subhead"></small></h1>
-            </headers>
+            </header>
+            <div ng-repeat="option in category.options" chrome-option="option"></div>
           </div>
         </div>
       </div>
@@ -50,8 +51,7 @@
   <script src="js/chrome-options-controller-head.js"></script>
   <script src="js/chrome-options-controller-main.js"></script>
 
-  <script src="js/chrome-options-directive-category.js"></script>
-  <script src="js/chrome-options-directive-option.js"></script>
+  <script src="js/chrome-options-directive.js"></script>
 
   <script src="js/chrome-options-service.js"></script>
 
