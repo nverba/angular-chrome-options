@@ -1,6 +1,6 @@
 angular.module('optionsConfig', []).value('config', [
 
-  { id: 'Example Page A', categories: [
+  { id: 'Example Page A', subhead: 'Example page "A" sub-heading', categories: [
 
     { id: 'Example Section 1 A', options: [
 
