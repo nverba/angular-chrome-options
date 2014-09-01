@@ -7,20 +7,32 @@
 
   <link rel="stylesheet" href="../../../bower_components/chrome-bootstrap/chrome-bootstrap.css">
 
+  <style type="text/css">
+    .ng-hide {
+      /* this is just another form of hiding an element */
+      z-index: 0;
+      opacity: 0;
+    }
+  </style>
+
 </head>
 <body class="chrome-bootstrap" ng-controller="ChromeOptionsMainController">
 
-<div class="frame">
-  <div class="navigation">
-    <h1>Chrome App</h1>
-    <ul class="menu">
-      <li ng-repeat="page in config" ng-class="{ 'selected': page.id == page_id }"><a ng-bind="page.id" ng-click="selectPage(page.id)"></a></li>
-    </ul>
+  <div class="frame">
+    <div class="navigation">
+      <h1>Chrome App</h1>
+      <ul class="menu">
+        <li ng-repeat="page in config" ng-class="{ 'selected': page.id === page_id }"><a ng-bind="page.id" ng-click="selectPage(page.id)"></a></li>
+      </ul>
+    </div>
+    <div class="mainview view">
+      <div ng-repeat="page in config" ng-class="{ 'selected': page.id === page_id }" page-id="page.id">
+        <headers>
+          <h1 ng-bind="page.id"></h1>
+        </headers>
+      </div>
+    </div>
   </div>
-</div>
-
-
-
 
   <script src="../../../bower_components/angular/angular.js"></script>
   <script src="../../../bower_components/angular-resolver/resolver_service.js"></script>

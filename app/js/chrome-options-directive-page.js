@@ -1,16 +1,17 @@
-ChromeOptionsApp.directive('optionsPage', function () {
+ChromeOptionsApp.directive('optionsPages', function (config) {
   'use strict';
 
   return {
 
     restrict: 'E',
-    scope: { },
+    scope: { pageId: '=' },
     templateUrl: "chrome-options-directive-page.html",
     link: function (scope, elem, attrs) {
 
-      scope.resetCat = function () {
+      console.log('loaded directive');
 
-      };
+      console.log(scope.pageId);
+
     }
   };
 });

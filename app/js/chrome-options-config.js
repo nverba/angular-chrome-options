@@ -1,6 +1,6 @@
 angular.module('optionsConfig', []).value('config', [
 
-  { id: 'ExampleA', categories: [
+  { id: 'Example Page A', categories: [
 
     { id: 'Example Section 1 A', options: [
 
@@ -31,7 +31,7 @@ angular.module('optionsConfig', []).value('config', [
 
   ]},
 
-  { id: 'ExampleB', categories: [
+  { id: 'Example Page B', categories: [
 
     { id: 'Example Section 1 B', options: [
 
