@@ -33,12 +33,13 @@ describe("optionsService:", function () {
     }
   ];
 
-  var expected_defaults = { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
-  var updated_defaults  = { testcat_a: { option_a1: 100 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
-  var spyStorageSet     = sinon.spy(storageAPI.local, "set");
-  var spyStorageGet     = sinon.stub(storageAPI.local, "get").callsArgWith(1, { 'clearCodeOptions': angular.copy(expected_defaults) });
+  var expected_defaults   = { testcat_a: { option_a1: 4 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
+  var updated_defaults    = { testcat_a: { option_a1: 100 }, testcat_b: { option_b1: 5, option_b2: 6, }, testcat_c: { option_c1: 4 }, testcat_d: { option_e1: 5 }};
+  var spyStorageSet       = sinon.spy(storageAPI.local, "set");
+  var spyStorageGet       = sinon.stub(storageAPI.local, "get").callsArgWith(1, { 'clearCodeOptions': angular.copy(expected_defaults) });
+  var spyStorageOnChanged = sinon.stub(storageAPI.onChanged, "addListener").onCall(5).callsArgWith(0, { 'clearCodeOptions': { newValue: updated_defaults } }, 'local');
 
-  beforeEach(function () {
+  beforeEach(function (done) {
 
     module('optionsService');
 
@@ -60,6 +61,11 @@ describe("optionsService:", function () {
           $rootScope.$digest();
         }, 0);
       };
+
+      options.ready.then(function () {
+        done();
+      });
+      digest();
     });
   });
 
@@ -74,13 +80,12 @@ describe("optionsService:", function () {
 
     describe("chrome.local.storage.set:", function () {
       it("was called with expected defaults", function () {
-        sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': expected_defaults });
+        return sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': expected_defaults });
       });
     });
 
     describe("options.categories:", function () {
       it("returns the default categories object", function () {
-        digest();
         return assert.deepEqual(options.categories, expected_defaults);
       });
     });
@@ -95,13 +100,10 @@ describe("optionsService:", function () {
   });
 
   describe("options scope:", function () {
-    afterEach(function () {
-      $rootScope.options.testcat_a.option_a1 = 4;
-    });
     describe("update scope:", function () {
       it("pushes updates to local storage", function () {
         $rootScope.options.testcat_a.option_a1 = 100;
-        sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': updated_defaults });
+        return sinon.assert.calledWith(spyStorageSet, { 'clearCodeOptions': updated_defaults });
       }) ;
     }) ;
   });
@@ -109,11 +111,8 @@ describe("optionsService:", function () {
   describe("options storage", function () {
     describe("update storage:", function () {
       it("updates scope on local storage changes", function () {
-        //console.log(options.categories);
-        //return assert.deepEqual(options.categories, updated_defaults);
+        return assert.deepEqual(options.categories, updated_defaults);
       });
     });
   });
-
-
 });

@@ -27,18 +27,11 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
       }
 
       $rootScope.$watch( function (){ return optionsService.categories; }, function (newValue, oldValue) {
-        //console.log('watch optionsService.categories');
         $window.chrome.storage.local.set({ 'clearCodeOptions': optionsService.categories });
       }, true);
 
       $window.chrome.storage.onChanged.addListener(function(changes, namespace) {
-
-        //console.log('updated any');
-
         if (namespace !== 'local' || !changes.clearCodeOptions || angular.equals(optionsService.categories, changes.clearCodeOptions.newValue)) { return; }
-
-        //console.log('updated onchanged');
-
         optionsService.categories = changes.clearCodeOptions.newValue;
       });
 
