@@ -14,7 +14,7 @@
   <div class="navigation">
     <h1>Chrome App</h1>
     <ul class="menu">
-      <li ng-repeat="page in config" ng-class="{ 'selected': page.id == page_id }"><a ng-bind="page.id" ng-click="showPage(page.id)"></a></li>
+      <li ng-repeat="page in config" ng-class="{ 'selected': page.id == page_id }"><a ng-bind="page.id" ng-click="selectPage(page.id)"></a></li>
     </ul>
   </div>
 </div>
