@@ -19,16 +19,16 @@ describe("optionsService:", function () {
   };
 
   var exampleConfig = [
-    { page_id: 'TestPage 1', categories:
+    { id: 'TestPage 1', categories:
       [
-        { category_id: 'TestCat A', options: [{ option_id: 'Option A1', default: 4, type: 'number' }]},
-        { category_id: 'TestCat B', options: [{ option_id: 'Option B1', default: 5, type: 'number' }, { option_id: 'Option B2', default: 6, type: 'number' }]}
+        { id: 'TestCat A', options: [{ id: 'Option A1', default: 4, type: 'number' }]},
+        { id: 'TestCat B', options: [{ id: 'Option B1', default: 5, type: 'number' }, { id: 'Option B2', default: 6, type: 'number' }]}
       ]
     },
-    { page_id: 'TestPage 2', categories:
+    { id: 'TestPage 2', categories:
       [
-        { category_id: 'TestCat C', options: [{ option_id: 'Option C1', default: 4, type: 'number' }]},
-        { category_id: 'TestCat D', options: [{ option_id: 'Option D1', alias: 'option_e1', default: 5, type: 'number' }]}
+        { id: 'TestCat C', options: [{ id: 'Option C1', default: 4, type: 'number' }]},
+        { id: 'TestCat D', options: [{ id: 'Option D1', alias: 'option_e1', default: 5, type: 'number' }]}
       ]
     }
   ];
