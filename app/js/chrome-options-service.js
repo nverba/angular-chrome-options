@@ -26,13 +26,13 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
         });
       }
 
-      $rootScope.$watch( function (){ return optionsService.categories; }, function (newValue, oldValue) {
+      $rootScope.$watch( function (){ return optionsService.categories; }, function () {
         $window.chrome.storage.local.set({ 'clearCodeOptions': optionsService.categories });
       }, true);
 
       $window.chrome.storage.onChanged.addListener(function(changes, namespace) {
         if (namespace !== 'local' || !changes.clearCodeOptions || angular.equals(optionsService.categories, changes.clearCodeOptions.newValue)) { return; }
-        optionsService.categories = changes.clearCodeOptions.newValue;
+        angular.copy(changes.clearCodeOptions.newValue, optionsService.categories);
       });
 
       optionsService.ready = Resolver.deferr(initOptions);
