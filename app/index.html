@@ -8,7 +8,19 @@
   <link rel="stylesheet" href="../../../bower_components/chrome-bootstrap/chrome-bootstrap.css">
 
 </head>
-<body ng-controller="ChromeOptionsMainController">
+<body class="chrome-bootstrap" ng-controller="ChromeOptionsMainController">
+
+<div class="frame">
+  <div class="navigation">
+    <h1>Chrome App</h1>
+    <ul class="menu">
+      <li ng-repeat="page in config" ng-class="{ 'selected': page.id == page_id }"><a ng-bind="page.id" ng-click="showPage(page.id)"></a></li>
+    </ul>
+  </div>
+</div>
+
+
+
 
   <script src="../../../bower_components/angular/angular.js"></script>
   <script src="../../../bower_components/angular-resolver/resolver_service.js"></script>
