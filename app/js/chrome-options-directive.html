@@ -1,6 +1,10 @@
-<div ng-class="chrOption.type">
+<div ng-if="!chrOption.options" ng-class="chrOption.type">
   <label>
     <input type="{{ chrOption.type }}" ng-model="options[chrCategory][chrOption.id]">
     <span ng-bind="chrOption.label"></span>
   </label>
+</div>
+
+<div>
+  <select ng-if="chrOption.options" ng-model="options[chrCategory][chrOption.id]" ng-options="option as option for option in chrOption.options"></select>
 </div>
