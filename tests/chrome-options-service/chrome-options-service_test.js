@@ -21,14 +21,14 @@ describe("optionsService:", function () {
   var exampleConfig = [
     { id: 'TestPage 1', categories:
       [
-        { id: 'TestCat A', options: [{ id: 'Option A1', default: 4, type: 'number' }]},
-        { id: 'TestCat B', options: [{ id: 'Option B1', default: 5, type: 'number' }, { id: 'Option B2', default: 6, type: 'number' }]}
+        { label: 'TestCat A', id: 'testcat_a', options: [{ label: 'Option A1', id: 'option_a1', default: 4, type: 'number' }]},
+        { label: 'TestCat B', id: 'testcat_b', options: [{ label: 'Option B1',id: 'option_b1', default: 5, type: 'number' }, { label: 'Option B2', id: 'option_b2', default: 6, type: 'number' }]}
       ]
     },
     { id: 'TestPage 2', categories:
       [
-        { id: 'TestCat C', options: [{ id: 'Option C1', default: 4, type: 'number' }]},
-        { id: 'TestCat D', options: [{ id: 'Option D1', alias: 'option_e1', default: 5, type: 'number' }]}
+        { label: 'TestCat C', id: 'testcat_c', options: [{ label: 'Option C1', id: 'option_c1', default: 4, type: 'number' }]},
+        { label: 'TestCat D', id: 'testcat_d', options: [{ label: 'Option D1', id: 'option_e1', default: 5, type: 'number' }]}
       ]
     }
   ];

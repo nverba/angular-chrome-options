@@ -20,11 +20,11 @@
     <div class="mainview view">
       <div ng-repeat="page in config" ng-class="{ 'selected': page.id === page_id }" page-id="page.id">
         <header>
-          <h1>{{ page.id }}<small ng-bind="page.subhead"></small></h1>
+          <h1>{{ page.label }}<small ng-bind="page.subhead"></small></h1>
         </header>
         <div class="content">
           <div ng-repeat="category in page.categories">
-            <h3>{{ category.id }}<small ng-bind="category.subhead"></small></h3>
+            <h3>{{ category.label }}<small ng-bind="category.subhead"></small></h3>
             <div ng-repeat="option in category.options" chr-option="option" chr-category="category.id"></div>
           </div>
         </div>

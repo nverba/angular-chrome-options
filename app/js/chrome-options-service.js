@@ -8,11 +8,9 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
         var response = {};
         angular.forEach(configObject, function (page) {
           angular.forEach(page.categories, function (category) {
-            var cat = category.id.toLowerCase().replace(/ /g, "_");
-            response[cat] = {};
+            response[category.id] = {};
             angular.forEach(category.options, function (option) {
-              var opt = option.alias || option.id.toLowerCase().replace(/ /g, "_");
-              response[cat][opt] = option.default;
+              response[category.id][option.id] = option.default;
             });
           });
         });
