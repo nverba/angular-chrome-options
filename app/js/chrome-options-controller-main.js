@@ -1,4 +1,4 @@
-ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOptionsMainController($scope, $window, $timeout, config) {
+ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOptionsMainController($scope, config) {
 
   $scope.config  = config;
   $scope.page_id = $scope.config[0].id;

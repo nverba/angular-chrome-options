@@ -1,4 +1,4 @@
-ChromeOptionsApp.directive('chrOption', function (config, options) {
+ChromeOptionsApp.directive('chrOption', function (options) {
   'use strict';
 
   return {
@@ -8,9 +8,8 @@ ChromeOptionsApp.directive('chrOption', function (config, options) {
     templateUrl: "js/chrome-options-directive.html",
     link: function (scope, elem, attrs) {
 
-      scope.category = scope.chrCategory.toLowerCase().replace(/ /g, "_");
-      scope.option   = scope.chrOption.id.toLowerCase().replace(/ /g, "_");
-      scope.options  = options.categories;
+      scope.options = options.categories;
+
     }
   };
 });
