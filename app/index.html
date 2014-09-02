@@ -14,11 +14,11 @@
     <div class="navigation">
       <h1>Chrome App</h1>
       <ul class="menu">
-        <li ng-repeat="page in config" ng-class="{ 'selected': page.id === page_id }"><a ng-bind="page.id" ng-click="selectPage(page.id)"></a></li>
+        <li ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }"><a ng-bind="page.id" ng-click="selectPage(page.id)"></a></li>
       </ul>
     </div>
     <div class="mainview view">
-      <div ng-repeat="page in config" ng-class="{ 'selected': page.id === page_id }" page-id="page.id">
+      <div ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }" page-id="page.id">
         <header>
           <h1>{{ page.label }}<small ng-bind="page.subhead"></small></h1>
         </header>

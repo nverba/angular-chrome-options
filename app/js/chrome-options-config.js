@@ -1,4 +1,8 @@
-angular.module('optionsConfig', []).value('config', [
+angular.module('optionsConfig', []).value('config', {
+
+  app_name: 'Chrome Options',
+
+  pages: [
 
   { label: 'Example Page A', id: 'example_page_a', subhead: 'Example page "A" sub-heading', categories: [
 
@@ -61,4 +65,4 @@ angular.module('optionsConfig', []).value('config', [
     ]}
 
   ]}
-]);
+]});
