@@ -7,14 +7,6 @@
 
   <link rel="stylesheet" href="../../../bower_components/chrome-bootstrap/chrome-bootstrap.css">
 
-  <style type="text/css">
-    .ng-hide {
-      /* this is just another form of hiding an element */
-      z-index: 0;
-      opacity: 0;
-    }
-  </style>
-
 </head>
 <body class="chrome-bootstrap" ng-controller="ChromeOptionsMainController">
 
@@ -32,10 +24,8 @@
         </header>
         <div class="content">
           <div ng-repeat="category in page.categories">
-            <header>
-              <h1>{{ category.id }}<small ng-bind="category.subhead"></small></h1>
-            </header>
-            <div ng-repeat="option in category.options" chrome-option="option"></div>
+            <h3>{{ category.id }}<small ng-bind="category.subhead"></small></h3>
+            <div ng-repeat="option in category.options" chr-option="option" chr-category="category.id"></div>
           </div>
         </div>
       </div>

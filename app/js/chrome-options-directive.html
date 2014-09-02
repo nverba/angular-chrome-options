@@ -1,6 +1,6 @@
 <div ng-class="chromeOption.type">
   <label>
-    <input type="{{ chromeOption.type }}">
+    <input type="{{ chrOption.type }}" ng-model="options[category][option]">
     <span ng-bind="chromeOption.id"></span>
   </label>
 </div>

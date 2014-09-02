@@ -2,7 +2,7 @@ angular.module('optionsConfig', []).value('config', [
 
   { id: 'Example Page A', subhead: 'Example page "A" sub-heading', categories: [
 
-    { id: 'Example Section 1 A', options: [
+    { id: 'Example Section 1 A', subhead: 'subhead 1 a', options: [
 
       { id: 'Select Number', default: 4, type: 'number', min: 1, max: 8 },
       { id: 'Checkbox', default: false, type: 'checkbox' },
@@ -11,7 +11,7 @@ angular.module('optionsConfig', []).value('config', [
 
     ]},
 
-    { id: 'Example Section 2 A', options: [
+    { id: 'Example_Section_2_A', alias: 'Example Section 2 A', options: [
 
       { id: 'Select Number', default: 4, type: 'number', min: 1, max: 8 },
       { id: 'Checkbox', default: false, type: 'checkbox' },
