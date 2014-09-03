@@ -11,7 +11,8 @@ angular.module('optionsConfig', []).value('config', {
       { label: 'Select Number', id: 'select_number', default: 4, type: 'number', min: 1, max: 8 },
       { label: 'Checkbox', id: 'checkbox', default: false, type: 'checkbox' },
       { label: 'Checkbox Two', id: 'checkbox_two', default: true, type: 'checkbox' },
-      { label: 'Drop Down', id: 'drop_down', default: "option1", options: ['option1', 'option2', 'option3']}
+      { label: 'Drop Down', id: 'drop_down', default: "option1", type: 'options', options: ['option1', 'option2', 'option3']},
+      { label: 'Reset 1a',  }
 
     ]},
 

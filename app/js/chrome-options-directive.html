@@ -1,10 +1,17 @@
-<div ng-if="!chrOption.options" ng-class="chrOption.type">
-  <label>
+
+<div ng-switch="chrOption.type" ng-class="chrOption.type">
+
+  <div ng-switch-when="options" style="margin: 10px 0;">
+    <select ng-if="chrOption.options"
+            ng-model="options[chrCategory][chrOption.id]"
+            ng-options="option as option for option in chrOption.options">
+    </select>
+    <span ng-bind="chrOption.label"></span>
+  </div>
+
+  <label ng-switch-default>
     <input type="{{ chrOption.type }}" ng-model="options[chrCategory][chrOption.id]">
     <span ng-bind="chrOption.label"></span>
   </label>
-</div>
 
-<div>
-  <select ng-if="chrOption.options" ng-model="options[chrCategory][chrOption.id]" ng-options="option as option for option in chrOption.options"></select>
 </div>
