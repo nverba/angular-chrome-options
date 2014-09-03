@@ -1,6 +1,6 @@
 angular.module('optionsConfig', []).value('config', {
 
-  app_name: 'Chrome Options',
+  app_name: 'Example App',
 
   pages: [
 

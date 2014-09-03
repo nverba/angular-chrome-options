@@ -7,12 +7,31 @@
 
   <link rel="stylesheet" href="../../../bower_components/chrome-bootstrap/chrome-bootstrap.css">
 
+  <style type="text/css">
+    #branding {
+      text-align: center;
+      color: #333;
+    }
+
+    #branding img {
+      margin-top: 10px;
+      margin-bottom: -15px;
+    }
+  </style>
+
 </head>
 <body class="chrome-bootstrap" ng-controller="ChromeOptionsMainController">
 
   <div class="frame">
     <div class="navigation">
-      <h1>Chrome App</h1>
+
+    <!--
+      <div id="branding">
+        <img src="img/icon38.png">
+        <h3 ng-bind="config.app_name"></h3>
+      </div>
+    -->
+      <h1 ng-bind="config.app_name"></h1>
       <ul class="menu">
         <li ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }"><a ng-bind="page.id" ng-click="selectPage(page.id)"></a></li>
       </ul>
