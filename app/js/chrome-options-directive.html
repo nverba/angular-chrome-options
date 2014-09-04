@@ -9,6 +9,12 @@
     <span ng-bind="chrOption.label"></span>
   </div>
 
+  <div ng-switch-when="buttons" class="controls">
+    <div ng-repeat="control in chrOption.controls" ng-class="control.type">
+      <button ng-if="control.action" ng-click="action(control.action)" ng-bind="control.label"></button>
+    </div>
+  </div>
+
   <label ng-switch-default>
     <input type="{{ chrOption.type }}" ng-model="options[chrCategory][chrOption.id]">
     <span ng-bind="chrOption.label"></span>

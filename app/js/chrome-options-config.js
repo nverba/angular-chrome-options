@@ -12,7 +12,7 @@ angular.module('optionsConfig', []).value('config', {
       { label: 'Checkbox', id: 'checkbox', default: false, type: 'checkbox' },
       { label: 'Checkbox Two', id: 'checkbox_two', default: true, type: 'checkbox' },
       { label: 'Drop Down', id: 'drop_down', default: "option1", type: 'options', options: ['option1', 'option2', 'option3']},
-      { label: 'Reset 1a',  }
+      { label: 'Reset 1a', type: 'buttons', controls: [{ type: 'button', action: 'test', label: 'Example' }, { type: 'spacer' }, { type: 'button', action: 'reset', label: 'Reset' }]   }
 
     ]},
 
