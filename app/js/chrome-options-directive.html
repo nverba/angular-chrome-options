@@ -1,5 +1,4 @@
-
-<div ng-switch="chrOption.type" ng-class="chrOption.type">
+<div ng-switch="chrOption.type" ng-class="chrOption.type" style="margin-left: 20px;">
 
   <div ng-switch-when="options" style="margin: 10px 0;">
     <select ng-if="chrOption.options"
@@ -9,7 +8,7 @@
     <span ng-bind="chrOption.label"></span>
   </div>
 
-  <div ng-switch-when="buttons" class="controls">
+  <div ng-switch-when="buttons" class="controls" style="border-bottom: none;">
     <div ng-repeat="control in chrOption.controls" ng-class="control.type">
       <button ng-if="control.action" ng-click="action(control.action)" ng-bind="control.label"></button>
     </div>
