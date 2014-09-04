@@ -12,7 +12,8 @@ angular.module('optionsConfig', []).value('config', {
       { label: 'Checkbox', id: 'checkbox', default: false, type: 'checkbox' },
       { label: 'Checkbox Two', id: 'checkbox_two', default: true, type: 'checkbox' },
       { label: 'Drop Down', id: 'drop_down', default: "option1", type: 'options', options: ['option1', 'option2', 'option3']},
-      { label: 'Reset 1a', type: 'buttons', controls: [{ type: 'button', action: 'test', label: 'Example' }, { type: 'spacer' }, { type: 'button', action: 'reset', label: 'Reset' }]   }
+      { type: 'h3', text: 'Reset Category' },
+      { label: 'Reset 1a', type: 'buttons', text: 'This is a selection of sample buttons, the reset button will reset category to defaults.', controls: [{ type: 'button', action: 'test', label: 'Example 1' }, { type: 'button', action: 'test', label: 'Example 2' }, { type: 'spacer' }, { type: 'button', action: 'reset', label: 'Reset' }]   }
 
     ]},
 
