@@ -4,9 +4,9 @@ angular.module('optionsConfig', []).value('config', {
 
   pages: [
 
-  { label: 'Example Page A', id: 'example_page_a', subhead: 'Example page "A" sub-heading', categories: [
+  { label: 'First Example Page', id: 'example_page_a', subhead: 'Example page "A" sub-heading', categories: [
 
-    { label: 'Example Section 1 A', id: 'example_section_1_a', subhead: 'subhead 1 a', options: [
+    { label: 'Example Category', id: 'example_section_1_a', options: [
 
       { label: 'Select Number', id: 'select_number', default: 4, type: 'number', min: 1, max: 8 },
       { label: 'Checkbox', id: 'checkbox', default: false, type: 'checkbox' },
@@ -15,7 +15,6 @@ angular.module('optionsConfig', []).value('config', {
       { type: 'h3', text: 'Reset Category' },
       { type: 'span', text: 'This is a selection of sample buttons, the reset button will reset category to defaults.' },
       { label: 'Reset 1a', type: 'buttons', controls: [{ type: 'button', action: 'test', label: 'Example 1' }, { type: 'button', action: 'test', label: 'Example 2' }, { type: 'spacer' }, { type: 'button', action: 'reset', label: 'Reset' }]   }
-
     ]},
 
     { label: 'Example Section 2 A', id: 'example_section_2_a', options: [
