@@ -4,6 +4,7 @@ ChromeOptionsApp.directive('chrOption', function (options, config) {
   return {
 
     restrict: 'A',
+    replace: 'true',
     scope: { chrOption: '=', chrCategory: '=' },
     templateUrl: "js/chrome-options-directive.html",
     link: function (scope, elem, attrs) {

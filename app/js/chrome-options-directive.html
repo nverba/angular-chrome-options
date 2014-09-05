@@ -12,7 +12,13 @@
   <h2 ng-switch-when="h2" ng-bind="chrOption.text" style="margin-left: -20px;"></h2>
   <h3 ng-switch-when="h3" ng-bind="chrOption.text" style="margin-left: -20px;"></h3>
   <h4 ng-switch-when="h4" ng-bind="chrOption.text" style="margin-left: -20px;"></h4>
-  <span ng-switch-when="span" ng-bind="chrOption.text"></span>
+
+  <div ng-switch-when="span">
+    <span ng-repeat="item in chrOption.content">
+      <span ng-if="!item.action" ng-bind="item.text"></span>
+      <a ng-if="item.action" ng-bind="item.text" ng-click="action(item.action)" class="action_item"></a>
+    </span>
+  </div>
 
   <div ng-switch-when="buttons" class="controls" style="border-bottom: none;">
     <div ng-repeat="control in chrOption.controls" ng-class="control.type">
