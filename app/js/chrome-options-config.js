@@ -38,7 +38,7 @@ angular.module('optionsConfig', []).value('config', {
 
   ]},
 
-  { label: 'Example Page B', id: 'example_page_b', categories: [
+  { label: 'Example Page B', id: 'example_page_b', filter: 'categories', categories: [
 
     { label: 'Example Section 1 B', id: 'example_section_1_b', options: [
 
