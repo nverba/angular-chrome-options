@@ -40,9 +40,12 @@
       <div ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }">
         <header>
           <h1>{{ page.label }}<small ng-bind="page.subhead"></small></h1>
+            <div class="corner" ng-if="page.filter">
+              <input class="search" placeholder="Filter options" ng-model="search[page.filter]">
+            </div>
         </header>
         <div class="content">
-          <div ng-repeat="category in page.categories">
+          <div ng-repeat="category in page.categories | filter : search.categories ">
             <h3 ng-if="category.label">{{ category.label }}<small ng-bind="category.subhead"></small></h3>
             <div ng-repeat="option in category.options" chr-option="option" chr-category="category.id"></div>
           </div>
