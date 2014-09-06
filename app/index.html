@@ -29,13 +29,12 @@
   <div class="frame">
     <div class="navigation">
 
-    <!--
       <div id="branding">
-        <img src="img/icon38.png">
-        <h3 ng-bind="config.app_name"></h3>
+        <img ng-if="config.branding" src="img/icon38.png">
+        <h2 ng-bind="config.app_name"></h2>
       </div>
-    -->
-      <h1 ng-bind="config.app_name"></h1>
+
+
       <ul class="menu">
         <li ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }"><a ng-bind="page.label" ng-click="selectPage(page.id)"></a></li>
       </ul>

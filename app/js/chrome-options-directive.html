@@ -26,6 +26,10 @@
     </div>
   </div>
 
+  <div ng-switch-when="include">
+    <ng-include src="chrOption.src"></ng-include>
+  </div>
+
   <label ng-switch-default>
       <input type="{{ chrOption.type }}" ng-model="options[chrCategory][chrOption.id]" ng-value="chrOption.value">
       <span ng-bind="chrOption.label"></span>
