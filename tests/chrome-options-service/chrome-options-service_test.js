@@ -43,13 +43,14 @@ describe("optionsService:", function () {
   var spyStorageSet       = sinon.spy(storageAPI.local, "set");
   var spyStorageGet       = sinon.stub(storageAPI.local, "get").callsArgWith(1, { 'clearCodeOptions': angular.copy(expected_defaults) });
   var spyStorageOnChanged = sinon.stub(storageAPI.onChanged, "addListener").onCall(5).callsArgWith(0, { 'clearCodeOptions': { newValue: updated_defaults } }, 'local');
+  var configPromise       = { then: sinon.stub().callsArgWith(0, exampleConfig)};
 
   beforeEach(function (done) {
 
     module('optionsService');
 
     angular.mock.module("optionsConfig", function ($provide) {
-      $provide.value('config', exampleConfig);
+      $provide.value('config', configPromise);
     });
 
     module(function($provide){

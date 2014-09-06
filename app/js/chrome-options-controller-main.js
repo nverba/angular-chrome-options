@@ -1,7 +1,10 @@
 ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOptionsMainController($scope, config) {
 
-  $scope.config  = config;
-  $scope.page_id = $scope.config.pages[0].id;
+  config.then(function (configs) {
+    $scope.config  = configs;
+    $scope.page_id = $scope.config.pages[0].id;
+  });
+
   $scope.search  = {};
 
   $scope.selectPage = function (id) {

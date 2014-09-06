@@ -20,10 +20,12 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
       optionsService.ready = Resolver.deferr(initOptions);
 
       function initOptions(deferred) {
-        $window.chrome.storage.local.get({ 'clearCodeOptions': optionsService.mapDefaults(config.pages) }, function (response) {
-          optionsService.categories = response.clearCodeOptions;
-          optionsService.defaults   = optionsService.mapDefaults(config.pages);
-          deferred.resolve();
+        config.then(function (configs) {
+          $window.chrome.storage.local.get({ 'clearCodeOptions': optionsService.mapDefaults(configs.pages) }, function (response) {
+            optionsService.categories = response.clearCodeOptions;
+            optionsService.defaults   = optionsService.mapDefaults(configs.pages);
+            deferred.resolve();
+          });
         });
       }
 

@@ -1,4 +1,4 @@
-ChromeOptionsApp.directive('chrOption', function (options, config) {
+ChromeOptionsApp.directive('chrOption', function (options) {
   'use strict';
 
   return {
