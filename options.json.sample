@@ -121,9 +121,12 @@
     "label": "Second page",
     "id": "example_page_b",
     "categories": [{
-      "label": "Second page",
-      "type": "include",
-      "src": "/include-sample.html"
+      "label": "Include Example",
+      "id": "include_example_1",
+      "options": [{
+        "type": "include",
+        "src": "/include_sample.html"
+      }]
     }]
   }]
 }
