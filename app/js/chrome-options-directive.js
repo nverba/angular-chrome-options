@@ -19,7 +19,9 @@ ChromeOptionsApp.directive('chrOption', function (options) {
         actions[name]();
       };
 
-      scope.options = options.categories;
+      options.ready.then(function () {
+        scope.options = options.categories;
+      });
     }
   };
 });
