@@ -5,7 +5,6 @@ angular.module('optionsConfig', [])
 
     $http.get('/options.json').success(function (result) {
       defer.resolve(result);
-      console.log(result);
     });
 
     return defer.promise;

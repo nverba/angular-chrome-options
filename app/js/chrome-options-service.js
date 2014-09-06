@@ -1,6 +1,6 @@
-angular.module('optionsService', ['optionsConfig', 'angularResolver'])
+angular.module('optionsService', ['optionsConfig'])
   .factory('options',
-    function ($window, $rootScope, config, Resolver) {
+    function ($window, $rootScope, $q, config) {
 
       var optionsService = {};
 
@@ -17,9 +17,10 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
         return response;
       };
 
-      optionsService.ready = Resolver.deferr(initOptions);
+      var deferred = $q.defer();
+      optionsService.ready = deferred.promise;
 
-      function initOptions(deferred) {
+      (function initOptions() {
         config.then(function (configs) {
           $window.chrome.storage.local.get({ 'clearCodeOptions': optionsService.mapDefaults(configs.pages) }, function (response) {
             optionsService.categories = response.clearCodeOptions;
@@ -27,7 +28,7 @@ angular.module('optionsService', ['optionsConfig', 'angularResolver'])
             deferred.resolve();
           });
         });
-      }
+      }());
 
       optionsService.ready.then(function () {
         $rootScope.$watch( function (){ return optionsService.categories; }, function () {
