@@ -70,13 +70,20 @@
           "text": "action link",
           "action": "reset"
         }, {
-          "text": "in the middle"
+          "text": "in the middle, click link to reset the category as an example action."
         }]
       }, {
-        "label": "Radio 1",
+        "label": "Male",
         "id": "radio_1",
-        "default": false,
-        "type": "radio"
+        "default": "female",
+        "type": "radio",
+        "value": "male"
+      }, {
+        "label": "Female",
+        "id": "radio_1",
+        "default": "female",
+        "type": "radio",
+        "value": "female"
       }, {
         "label": "Checkbox Two",
         "id": "checkbox_two",
