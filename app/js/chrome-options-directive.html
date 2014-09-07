@@ -27,7 +27,11 @@
   </div>
 
   <div ng-switch-when="include">
-    <ng-include src="chrOption.src"></ng-include>
+    <ng-include src="chrOption.src" width="{{ chrOption.width }}" height="{{ chrOption.height }}" class="imported"></ng-include>
+  </div>
+
+  <div ng-switch-when="iframe" >
+    <iframe ng-src="{{ chrOption.src }}" width="{{ chrOption.width }}" height="{{ chrOption.height }}" class="imported"></iframe>
   </div>
 
   <!-- to-do add modal support
