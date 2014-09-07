@@ -29,8 +29,8 @@
     <div class="navigation">
 
       <div id="branding">
-        <img ng-if="config.branding" src="img/icon38.png">
-        <h2 ng-bind="config.app_name"></h2>
+        <img ng-if="config.branding" ng-src="{{ config.branding }}">
+        <h1 ng-bind="config.app_name"></h1>
       </div>
 
 
