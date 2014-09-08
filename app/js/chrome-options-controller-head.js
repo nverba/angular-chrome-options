@@ -1,5 +1,6 @@
 ChromeOptionsApp.controller('ChromeOptionsHeadController', function ChromeOptionsHeadController($scope, config) {
 
-  $scope.app_name = config.app_name;
-
+  config.then(function (configs) {
+    $scope.app_name = configs.app_name;
+  });
 });
