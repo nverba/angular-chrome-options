@@ -39,6 +39,7 @@ angular.module('optionsService', ['optionsConfig'])
       $window.chrome.storage.onChanged.addListener(function(changes, namespace) {
         if (namespace !== 'local' || !changes.clearCodeOptions || angular.equals(optionsService.categories, changes.clearCodeOptions.newValue)) { return; }
         angular.copy(changes.clearCodeOptions.newValue, optionsService.categories);
+        $rootScope.$apply();
       });
 
       return optionsService;
