@@ -17,6 +17,7 @@
     <span ng-repeat="item in chrOption.content">
       <span ng-if="!item.action" ng-bind="item.text"></span>
       <a ng-if="item.action" ng-bind="item.text" ng-click="action(item.action)" class="action_item"></a>
+      <a ng-if="item.href" ng-bind="item.text" ng-href="{{ item.href }}" target="_blank" class="action_item"></a>
     </span>
   </p>
 
