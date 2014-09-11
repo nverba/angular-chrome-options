@@ -1,6 +1,6 @@
 {
   "name": "angular-chrome-options",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "authors": [
     "nverba <distantstate@gmail.com>"
   ],
@@ -26,9 +26,9 @@
   "dependencies": {
     "angular": "~1.2.23",
     "chrome-bootstrap": "~1.4.0",
-    "angular-mocks": "~1.2.23"
+    "angular-mocks": "<1.2.23"
   },
   "devDependencies": {
-    "angular-mocks": "~1.2.23"
+    "angular-mocks": "<1.2.23"
   }
 }
