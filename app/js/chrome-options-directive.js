@@ -1,4 +1,4 @@
-ChromeOptionsApp.directive('chrOption', function (options) {
+ChromeOptionsApp.directive('chrOption', ['options', function (options) {
   'use strict';
 
   return {
@@ -24,4 +24,4 @@ ChromeOptionsApp.directive('chrOption', function (options) {
       });
     }
   };
-});
+}]);

@@ -1,5 +1,5 @@
 angular.module('optionsConfig', [])
-  .factory('config', function ($http, $q) {
+  .factory('config', ['$http', '$q',  function ($http, $q) {
 
     var defer = $q.defer();
 
@@ -9,4 +9,4 @@ angular.module('optionsConfig', [])
 
     return defer.promise;
 
-  });
+  }]);

@@ -1,5 +1,5 @@
 angular.module('optionsService', ['optionsConfig'])
-  .factory('options',
+  .factory('options', ['$window', '$rootScope', '$q', 'config',
     function ($window, $rootScope, $q, config) {
 
       var optionsService = {};
@@ -44,4 +44,4 @@ angular.module('optionsService', ['optionsConfig'])
 
       return optionsService;
 
-    });
+    }]);

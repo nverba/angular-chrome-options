@@ -1,4 +1,4 @@
-ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOptionsMainController($scope, config) {
+ChromeOptionsApp.controller('ChromeOptionsMainController', ['$scope', 'config', function ChromeOptionsMainController($scope, config) {
 
   config.then(function (configs) {
     $scope.config  = configs;
@@ -10,4 +10,4 @@ ChromeOptionsApp.controller('ChromeOptionsMainController', function ChromeOption
   $scope.selectPage = function (id) {
     $scope.page_id = id;
   };
-});
+}]);
