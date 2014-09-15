@@ -4,6 +4,8 @@ angular.module('optionsService', ['optionsConfig'])
 
       var optionsService = {};
 
+      // fn: return 'response' object of defaults from supplied confic object.
+
       optionsService.mapDefaults = function mapDefaults(configObject) {
         var response = {};
         angular.forEach(configObject, function (page) {
@@ -16,6 +18,10 @@ angular.module('optionsService', ['optionsConfig'])
         });
         return response;
       };
+
+      // Initialise service with storage results, or fall back to mapped defaults from config object.
+      // Whilst the get operation resolves the deferrer, the result is bound to a seperate 'categories' object.
+      // Returning the result with the promise would break scope bindings.
 
       var deferred = $q.defer();
       optionsService.ready = deferred.promise;
@@ -30,11 +36,15 @@ angular.module('optionsService', ['optionsConfig'])
         });
       }());
 
+      // Config watcher to update local storage, whenever scope is updated.
+
       optionsService.ready.then(function () {
         $rootScope.$watch( function (){ return optionsService.categories; }, function () {
           $window.chrome.storage.local.set({ 'clearCodeOptions': optionsService.categories });
         }, true);
       });
+
+      // Pick up changes in local storage, and push to scope. Allows several instances of options service (client page/options page) to stay in sync.
 
       $window.chrome.storage.onChanged.addListener(function(changes, namespace) {
         if (namespace !== 'local' || !changes.clearCodeOptions || angular.equals(optionsService.categories, changes.clearCodeOptions.newValue)) { return; }
