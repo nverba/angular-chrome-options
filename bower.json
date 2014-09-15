@@ -25,7 +25,8 @@
   ],
   "dependencies": {
     "angular": "~1.2.0",
-    "chrome-bootstrap": "~1.4.0"
+    "chrome-bootstrap": "~1.4.0",
+    "ng-debounce": "~0.1.4"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0"

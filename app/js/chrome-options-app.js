@@ -1,1 +1,1 @@
-var ChromeOptionsApp = angular.module('ChromeOptionsApp', ['optionsService', 'optionsConfig']);
+var ChromeOptionsApp = angular.module('ChromeOptionsApp', ['optionsService', 'optionsConfig', 'debounce']);
