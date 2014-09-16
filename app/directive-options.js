@@ -1,17 +1,17 @@
-app.directive('chrOption', ['options', function (options) {
+app.directive('option', ['options', function (options) {
   'use strict';
 
   return {
 
     restrict: 'A',
     replace: 'true',
-    scope: { chrOption: '=', chrCategory: '=' },
+    scope: { option: '=', category: '=' },
     templateUrl: "directive-options.html",
     link: function (scope, elem, attrs) {
 
       var actions = {
         reset: function () {
-          angular.copy(options.defaults[scope.chrCategory], options.categories[scope.chrCategory]);
+          angular.copy(options.defaults[scope.category.id], options.categories[scope.category.id]);
         }
       };
 

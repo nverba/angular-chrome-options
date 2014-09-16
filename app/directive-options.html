@@ -1,20 +1,20 @@
-<div ng-switch="chrOption.type" ng-class="chrOption.type" style="margin-left: 20px;">
+<div ng-switch="option.type" ng-class="option.type" style="margin-left: 20px;">
 
   <div ng-switch-when="options" style="margin: 10px 0;">
-    <select ng-if="chrOption.options"
-            ng-model="options[chrCategory][chrOption.id]"
-            ng-options="option as option for option in chrOption.options">
+    <select ng-if="option.options"
+            ng-model="options[category.id][option.id]"
+            ng-options="option as option for option in option.options">
     </select>
-    <span ng-bind="chrOption.label"></span>
+    <span ng-bind="option.label"></span>
   </div>
 
-  <h1 ng-switch-when="h1" ng-bind="chrOption.text" style="margin-left: -20px;"></h1>
-  <h2 ng-switch-when="h2" ng-bind="chrOption.text" style="margin-left: -20px;"></h2>
-  <h3 ng-switch-when="h3" ng-bind="chrOption.text" style="margin-left: -20px;"></h3>
-  <h4 ng-switch-when="h4" ng-bind="chrOption.text" style="margin-left: -20px;"></h4>
+  <h1 ng-switch-when="h1" ng-bind="option.text" style="margin-left: -20px;"></h1>
+  <h2 ng-switch-when="h2" ng-bind="option.text" style="margin-left: -20px;"></h2>
+  <h3 ng-switch-when="h3" ng-bind="option.text" style="margin-left: -20px;"></h3>
+  <h4 ng-switch-when="h4" ng-bind="option.text" style="margin-left: -20px;"></h4>
 
   <p ng-switch-when="span">
-    <span ng-repeat="item in chrOption.content">
+    <span ng-repeat="item in option.content">
       <span ng-if="!item.action && !item.href" ng-bind="item.text"></span>
       <a ng-if="item.action" ng-bind="item.text" ng-click="action(item.action)" class="action_item"></a>
       <a ng-if="item.href" ng-bind="item.text" ng-href="{{ item.href }}" target="_blank" class="action_item"></a>
@@ -22,28 +22,28 @@
   </p>
 
   <div ng-switch-when="buttons" class="controls" style="border-bottom: none;">
-    <div ng-repeat="control in chrOption.controls" ng-class="control.type">
+    <div ng-repeat="control in option.controls" ng-class="control.type">
       <button ng-if="control.action" ng-click="action(control.action)" ng-bind="control.label"></button>
     </div>
   </div>
 
   <div ng-switch-when="include">
-    <ng-include src="chrOption.src" width="{{ chrOption.width }}" height="{{ chrOption.height }}" class="imported"></ng-include>
+    <ng-include src="option.src" width="{{ option.width }}" height="{{ option.height }}" class="imported"></ng-include>
   </div>
 
   <div ng-switch-when="iframe" >
-    <iframe ng-src="{{ chrOption.src }}" width="{{ chrOption.width }}" height="{{ chrOption.height }}" class="imported"></iframe>
+    <iframe ng-src="{{ option.src }}" width="{{ option.width }}" height="{{ option.height }}" class="imported"></iframe>
   </div>
 
   <!-- to-do add modal support
     <div ng-switch-when="modal" class="overlay">
-      <ng-include src="chrOption.src"></ng-include>
+      <ng-include src="option.src"></ng-include>
     </div>
   -->
 
   <label ng-switch-default>
-    <input type="{{ chrOption.type }}" ng-model="options[chrCategory][chrOption.id]" ng-value="chrOption.value" debounce="{{ chrOption.debounce }}">
-    <span ng-bind="chrOption.label"></span>
+    <input type="{{ option.type }}" ng-model="options[category.id][option.id]" ng-value="option.value" debounce="{{ option.debounce }}">
+    <span ng-bind="option.label"></span>
   </label>
 
 </div>

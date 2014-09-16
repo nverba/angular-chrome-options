@@ -69,7 +69,7 @@
         <div class="content">
           <div ng-repeat="category in page.categories | filter : search.categories ">
             <h3 ng-if="category.label">{{ category.label }}<small ng-bind="category.subhead"></small></h3>
-            <div ng-repeat="option in category.options" chr-option="option" chr-category="category.id"></div>
+            <div ng-repeat="option in category.options" option="option" category="category"></div>
           </div>
         </div>
       </div>
