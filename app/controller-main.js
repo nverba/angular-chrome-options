@@ -1,4 +1,4 @@
-ChromeOptionsApp.controller('ChromeOptionsMainController', ['$scope', 'config', function ChromeOptionsMainController($scope, config) {
+app.controller('MainCtrl', ['$scope', 'config', function ChromeOptionsMainController($scope, config) {
 
   config.then(function (configs) {
     $scope.config  = configs;

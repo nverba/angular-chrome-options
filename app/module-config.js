@@ -1,4 +1,4 @@
-angular.module('optionsConfig', [])
+angular.module('config', [])
   .factory('config', ['$http', '$q',  function ($http, $q) {
 
     var defer = $q.defer();

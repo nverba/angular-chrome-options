@@ -21,7 +21,8 @@
     "node_modules",
     "tests",
     "gulpfile.js",
-    "package.json"
+    "package.json",
+    "archive.js"
   ],
   "dependencies": {
     "angular": "~1.2.0",

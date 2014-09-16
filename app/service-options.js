@@ -1,4 +1,4 @@
-angular.module('optionsService', ['optionsConfig'])
+angular.module('options', ['config'])
   .factory('options', ['$window', '$rootScope', '$q', 'config',
     function ($window, $rootScope, $q, config) {
 

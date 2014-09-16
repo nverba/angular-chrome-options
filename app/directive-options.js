@@ -1,4 +1,4 @@
-ChromeOptionsApp.directive('chrOption', ['options', function (options) {
+app.directive('chrOption', ['options', function (options) {
   'use strict';
 
   return {
@@ -6,7 +6,7 @@ ChromeOptionsApp.directive('chrOption', ['options', function (options) {
     restrict: 'A',
     replace: 'true',
     scope: { chrOption: '=', chrCategory: '=' },
-    templateUrl: "js/chrome-options-directive.html",
+    templateUrl: "directive-options.html",
     link: function (scope, elem, attrs) {
 
       var actions = {

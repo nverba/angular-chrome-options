@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html html lang="en" ng-app="ChromeOptionsApp" ng-strict-di="" ng-csp="">
-<head ng-controller="ChromeOptionsHeadController">
+<html html lang="en" ng-app="ChromeOptions" ng-strict-di="" ng-csp="">
+<head ng-controller="HeadCtrl">
 
   <meta charset="utf-8">
   <title ng-bind="app_name + ' - Options'"></title>
 
-  <link rel="stylesheet" href="../../../bower_components/chrome-bootstrap/chrome-bootstrap.css">
+  <link rel="stylesheet" href="../../chrome-bootstrap/chrome-bootstrap.css">
 
   <style type="text/css">
     #branding {
@@ -43,7 +43,7 @@
   </style>
 
 </head>
-<body class="chrome-bootstrap" ng-controller="ChromeOptionsMainController">
+<body class="chrome-bootstrap" ng-controller="MainCtrl">
 
   <div class="frame">
     <div class="navigation">
@@ -76,18 +76,18 @@
     </div>
   </div>
 
-  <script src="../../../bower_components/angular/angular.js"></script>
-  <script src="../../../bower_components/ng-debounce/angular-debounce.js"></script>
+  <script src="../../angular/angular.js"></script>
+  <script src="../../ng-debounce/angular-debounce.js"></script>
 
-  <script src="js/chrome-options-app.js"></script>
-  <script src="js/chrome-options-config.js"></script>
+  <script src="app.js"></script>
+  <script src="module-config.js"></script>
 
-  <script src="js/chrome-options-controller-head.js"></script>
-  <script src="js/chrome-options-controller-main.js"></script>
+  <script src="controller-head.js"></script>
+  <script src="controller-main.js"></script>
 
-  <script src="js/chrome-options-directive.js"></script>
+  <script src="directive-options.js"></script>
 
-  <script src="js/chrome-options-service.js"></script>
+  <script src="service-options.js"></script>
 
 </body>
 </html>
