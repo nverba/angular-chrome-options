@@ -22,7 +22,7 @@
     "tests",
     "gulpfile.js",
     "package.json",
-    "archive.js"
+    "notes.js"
   ],
   "dependencies": {
     "angular": "~1.2.0",
