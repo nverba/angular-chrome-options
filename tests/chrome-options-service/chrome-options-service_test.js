@@ -1,6 +1,6 @@
 /*global console, beforeEach, afterEach, describe, inject, module, it */
 
-describe("optionsService:", function () {
+describe("options:", function () {
   "use strict";
 
   var options, $rootScope, digest;
@@ -47,9 +47,9 @@ describe("optionsService:", function () {
 
   beforeEach(function (done) {
 
-    module('optionsService');
+    module('options');
 
-    angular.mock.module("optionsConfig", function ($provide) {
+    angular.mock.module("config", function ($provide) {
       $provide.value('config', configPromise);
     });
 
