@@ -45,36 +45,7 @@
 </head>
 <body class="chrome-bootstrap" ng-controller="MainCtrl">
 
-  <div class="frame">
-    <div class="navigation">
-
-      <div id="branding">
-        <img ng-if="config.branding" ng-src="{{ config.branding }}">
-        <h1 ng-bind="config.app_name"></h1>
-      </div>
-
-
-      <ul class="menu">
-        <li ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }"><a ng-bind="page.label" ng-click="selectPage(page.id)"></a></li>
-      </ul>
-    </div>
-    <div class="mainview view">
-      <div ng-repeat="page in config.pages" ng-class="{ 'selected': page.id === page_id }">
-        <header>
-          <h1>{{ page.label }}<small ng-bind="page.subhead"></small></h1>
-            <div class="corner" ng-if="page.filter">
-              <input class="search" placeholder="Filter options" ng-model="search[page.filter]">
-            </div>
-        </header>
-        <div class="content">
-          <div ng-repeat="category in page.categories | filter : search.categories ">
-            <h3 ng-if="category.label">{{ category.label }}<small ng-bind="category.subhead"></small></h3>
-            <div ng-repeat="option in category.options" option="option" category="category"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ng-include src="'include-options.html'"></ng-include>
 
   <script src="../angular/angular.js"></script>
   <script src="../ng-debounce/angular-debounce.js"></script>
