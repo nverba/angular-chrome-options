@@ -13,7 +13,7 @@ The long term plan is to wait for the Chrome developers to finalise their plan t
 You can see the spec document for this feature here: [Extension Options V2](https://docs.google.com/document/d/1CLh2RtQs0bx9GnAUl7V2HTzXnfO7z2Q7J623SyNXR4M/edit#heading=h.uoul2c1z9oo4), and follow its progress [here](https://code.google.com/p/chromium/issues/detail?id=386830).
 
 
-If you want adapt this script, you will need to check out the angular-chrome-options-container. Due to the nature of distributing a complete AngularJS app as a bower component with parallel dependencies to Angular and other libs, also distributed as bower components, it is developed as a submodule within this parent container. This is also where the tests live.
+If you want adapt this script, you will need to check out the [angular-chrome-options-container](https://github.com/nverba/angular-chrome-options-container). Due to the nature of distributing a complete AngularJS app as a bower component with parallel dependencies to Angular and other libs, also distributed as bower components, it is developed as a submodule within this parent container. This is also where the tests live.
 
 Watch out for Git submodules if you haven't worked with them before. They're tricky.
 
