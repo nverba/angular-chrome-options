@@ -1,11 +1,11 @@
 {
   "name": "angular-chrome-options",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "authors": [
     "nverba <distantstate@gmail.com>"
   ],
   "description": "AngularJS app for quick and easy configuration of Chrome app/extension settings, backed up with chrome local storage.",
-  "main": "app/index.html",
+  "main": "dist/index.html",
   "keywords": [
     "chrome",
     "bootstrap",

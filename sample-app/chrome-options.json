@@ -1,0 +1,171 @@
+{
+  "app_name": "Example App",
+  "branding": false,
+  "pages": [{
+    "label": "Settings Page",
+    "id": "example_page_a",
+    "subhead": "Example page sub-heading",
+    "filter": "categories",
+    "categories": [{
+      "label": "Example category",
+      "id": "example_section_1_a",
+      "options": [{
+        "label": "Select Number",
+        "id": "select_number",
+        "default": 4,
+        "type": "number",
+        "min": 1,
+        "max": 8,
+        "debounce": 50
+      }, {
+        "label": "Checkbox",
+        "id": "checkbox",
+        "default": false,
+        "type": "checkbox"
+      }, {
+        "label": "Checkbox Two",
+        "id": "checkbox_two",
+        "default": true,
+        "type": "checkbox"
+      }, {
+        "label": "Drop Down",
+        "id": "drop_down",
+        "default": "option1",
+        "type": "options",
+        "options": ["option1", "option2", "option3"]
+      }, {
+        "type": "h3",
+        "text": "Reset Category"
+      }, {
+        "type": "span",
+        "content": [{
+          "text": "This is a selection of sample buttons, the reset button will reset category to defaults."
+        }]
+      }, {
+        "label": "Reset 1a",
+        "type": "buttons",
+        "controls": [{
+          "type": "button",
+          "action": "test",
+          "label": "Example 1"
+        }, {
+          "type": "button",
+          "action": "test",
+          "label": "Example 2"
+        }, {
+          "type": "spacer"
+        }, {
+          "type": "button",
+          "action": "reset",
+          "label": "Reset"
+        }]
+      }]
+    }, {
+      "label": "Other section",
+      "id": "example_section_2_a",
+      "options": [{
+        "type": "span",
+        "content": [{
+          "text": "This is a text element with an "
+        }, {
+          "text": "action link",
+          "action": "reset"
+        }, {
+          "text": "in the middle, click link to reset the category as an example action."
+        }]
+      }, {
+        "type": "span",
+        "content": [{
+          "text": "This is a text element with an "
+        }, {
+          "text": "external href",
+          "href": "http://github.com"
+        }, {
+          "text": "in the middle."
+        }]
+      }, {
+        "label": "Male",
+        "id": "radio_1",
+        "default": "female",
+        "type": "radio",
+        "value": "male"
+      }, {
+        "label": "Female",
+        "id": "radio_1",
+        "default": "female",
+        "type": "radio",
+        "value": "female"
+      }, {
+        "label": "Checkbox Two",
+        "id": "checkbox_two",
+        "default": true,
+        "type": "checkbox"
+      }]
+    }, {
+      "label": "Last section",
+      "id": "example_section_3_a",
+      "options": [{
+        "label": "Zebra",
+        "id": "select_number",
+        "default": 4,
+        "type": "number",
+        "min": 1,
+        "max": 8
+      }, {
+        "label": "Checkbox",
+        "id": "checkbox",
+        "default": false,
+        "type": "checkbox"
+      }, {
+        "label": "Checkbox Two",
+        "id": "checkbox_two",
+        "default": true,
+        "type": "checkbox"
+      }, {
+        "label": "Drop Down",
+        "id": "drop_down",
+        "default": "option1",
+        "options": ["option1", "option2", "option3"]
+      }]
+    }]
+  }, {
+    "label": "Include page",
+    "id": "example_page_c",
+    "categories": [{
+      "label": "Include Example",
+      "id": "include_example_1",
+      "options": [{
+        "type": "include",
+        "width": "100%",
+        "height": "300px",
+        "src": "/include_sample.html"
+      }]
+    }]
+  }, {
+    "label": "Iframe page",
+    "id": "example_page_e",
+    "categories": [{
+      "label": "Iframe Example",
+      "id": "iframe_example_1",
+      "options": [{
+        "type": "iframe",
+        "width": "100%",
+        "height": "300px",
+        "src": "../../../include_sample.html"
+      }]
+    }]
+  }, {
+    "label": "Modal page",
+    "id": "example_page_f",
+    "categories": [{
+      "label": "",
+      "id": "iframe_example_1",
+      "options": [{
+        "type": "modal",
+        "width": "100%",
+        "height": "auto",
+        "src": "/include_modal.html"
+      }]
+    }]
+  }]
+}

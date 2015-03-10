@@ -1,0 +1,51 @@
+var spyStorageOnChanged = sinon.stub(storageAPI.onChanged, "addListener").onCall(7).callsArgWith(0, { 'clearCodeOptions': { newValue: updatedDefaults } }, 'local');
+var spyStorageRemove = sinon.spy(storageAPI.local, "remove");
+var spyStorageClear  = sinon.spy(storageAPI.local, "clear");
+
+
+console.log(options.categories.testcat_a.option_a1);
+
+
+1. Check for digest()
+
+2. check before loop for options ready
+
+
+optionsService.update = function (category, option, value) {
+  console.log('options updated');
+  $window.chrome.storage.local.set({ 'clearCodeOptions': optionsService.categories });
+};
+
+
+
+
+
+
+The application opens chrome-options.json from the root of the appication.
+
+1. Generate the options pages and options
+
+2. Generate the options object, merging in saved options from storage.
+
+Any user changes to the options page are synced with the saved options object.
+
+Currently, if the config object is updated  and pushed to users, any new objects will be present in the options page and the old options will be ommited. However the options for the old gonfig object will still be present in the options object. angular-chrome-options does not prune retired options from the options object. This is to preserve user options in case you need to quickly revert back to using the 3rd party lib or in the case that changes were pushed to users by mistak
+
+
+Keeping the old options in the options storage object allows for a certain level of falback should you need to revert your changes, for example re-enabling a 3rd party lib whilst preserving the users original custom settings.
+
+Whilst there is a small risk that over time the saved options object will continue to accrue extra cruft, it is still preferable to dropping user data
+
+
+
+
+
+
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png"
+    },
+    "default_title": "Chrome Options"
+  },

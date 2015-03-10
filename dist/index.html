@@ -34,12 +34,12 @@
       display: block;
     }
 
-    /* hide native number spinners - memory issues */
+/*     hide native number spinners - memory issues
     input[type=number]::-webkit-inner-spin-button,
     input[type=number]::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
-    }
+    }*/
   </style>
 
 </head>
@@ -48,7 +48,7 @@
   <ng-include src="'include-options.html'"></ng-include>
 
   <script src="../angular/angular.js"></script>
-  <script src="../ng-debounce/angular-debounce.js"></script>
+  <script src="../angular-debounce/dist/angular-debounce.js"></script>
 
   <script src="app.js"></script>
   <script src="module-config.js"></script>
