@@ -1,14 +1,24 @@
 var gulp  = require('gulp');
 var karma = require('karma').server;
+var clean = require('gulp-clean');
 
 // Use this to move updated dist folder to sample-app under node_modules
 // Other node_module dependencies for sample-app need to be loaded separately
 // The sample-app folder is not submitted to Git, do not edit files there directly!!!
 
-gulp.task('dist-to-sample', function () {
+gulp.task('clean-sample-app', [], function() {
+  gulp.src("sample-app/node_modules/angular-chrome-options/**.*")
+      .pipe(clean());
+});
+
+gulp.task('build-sample', ['clean-sample-app'], function () {
 
   return gulp.src('./dist/*.*')
     .pipe(gulp.dest('./sample-app/node_modules/angular-chrome-options'));
+});
+
+gulp.task('sample-watch', function() {
+  gulp.watch('./dist/*.*', ['build-sample']);
 });
 
 var karmaCommonConf = {
