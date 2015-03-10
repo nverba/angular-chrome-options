@@ -2,19 +2,34 @@ __angular-chrome-options__ is an experimental __AngularJS__ app that generates a
 
 Checkout `options.json.sample` to see how to generate an options page.
 
-Options can then be used in your application by injecting the `service-options.js` service (if your app is also an AngularJS app), or observing changes to `chrome.storage` (for plain JavaScript).
+Options can then be used in your application by injecting the __options-module__ (if your app is also an AngularJS app), or observing changes to `chrome.storage` (for plain JavaScript).
 
-This application is intended to be distributed as a Bower component, whilst it is experimental, it is stable enough to use, and I have this version working in a production application. [Clear Code](https://chrome.google.com/webstore/detail/clear-code/glnikohjhmkofkfcphgbdlmhjdjffcmg)
+Whilst this is experimental and not all features are complete, it is stable enough to use, and I have this version working in a production application. [Clear Code](https://chrome.google.com/webstore/detail/clear-code/glnikohjhmkofkfcphgbdlmhjdjffcmg)
 
-The application makes use of the css from [chrome-bootstrap](https://github.com/better-history/chrome-bootstrap). This seems to be in flux at the moment, some of the links on the github page are dead and the Bower listing has disappeared in the last few weeks.
+The application makes use of the css from [chrome-bootstrap](https://github.com/better-history/chrome-bootstrap).
 
 The long term plan is to wait for the Chrome developers to finalise their plan to make native options page styles available to all developers, they have specified that this will not include any data binding and will not be able to generate options pages as a feature, so I hope to use some version of this library to fulfill that purpose. Quick and easy options pages.
 
 You can see the spec document for this feature here: [Extension Options V2](https://docs.google.com/document/d/1CLh2RtQs0bx9GnAUl7V2HTzXnfO7z2Q7J623SyNXR4M/edit#heading=h.uoul2c1z9oo4), and follow its progress [here](https://code.google.com/p/chromium/issues/detail?id=386830).
 
 
-If you want adapt this script, you will need to check out the [angular-chrome-options-container](https://github.com/nverba/angular-chrome-options-container). Due to the nature of distributing a complete AngularJS app as a bower component with parallel dependencies to Angular and other libs, also distributed as bower components, it is developed as a submodule within this parent container. This is also where the tests live.
+## Sample App
 
-Watch out for Git submodules if you haven't worked with them before. They're tricky.
+#### The sample app must be built, then loaded as an unpacked Chrome Extension.
+
+Use `gulp build-sample` to move updated dist folder to sample-app under node_modules.
+
+_Other node_module dependencies for sample-app need to be loaded separately, the sample-app folder is not submitted to Git, do not edit files there directly!!!_ use `gulp sample-watch` to auto compile any changes into this directory when in development.
+
+From sample-app root
+
+    npm install
+
+from project root
+
+    gulp dist-to-sample
 
 
+Then from chrome extensions page, enable __Developer mode__, click __Load unpacked extension__.
+
+To access the sample page options, you can click on the options link in the extensions page under __Chrome Options__, or right click the icon in the browser toolbar.
