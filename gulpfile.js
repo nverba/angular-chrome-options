@@ -14,7 +14,7 @@ gulp.task('clean-sample-app', [], function() {
 gulp.task('build-sample', ['clean-sample-app'], function () {
 
   return gulp.src('./dist/*.*')
-    .pipe(gulp.dest('./sample-app/node_modules/angular-chrome-options'));
+    .pipe(gulp.dest('./sample-app/node_modules/angular-chrome-options/dist'));
 });
 
 gulp.task('sample-watch', function() {

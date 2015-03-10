@@ -17,6 +17,6 @@
   "permissions": [
     "storage"
   ],
-  "options_page": "node_modules/angular-chrome-options/index.html",
+  "options_page": "node_modules/angular-chrome-options/dist/index.html",
   "web_accessible_resources": ["icons/icon38.png"]
 }
