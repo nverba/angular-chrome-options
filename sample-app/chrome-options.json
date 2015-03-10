@@ -15,8 +15,7 @@
         "default": 4,
         "type": "number",
         "min": 1,
-        "max": 8,
-        "debounce": 50
+        "max": 8
       }, {
         "label": "Checkbox",
         "id": "checkbox",

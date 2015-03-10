@@ -1,1 +1,1 @@
-angular.module('ChromeOptions', ['options', 'config', 'rt.debounce']);
+angular.module('ChromeOptions', ['options', 'config']);

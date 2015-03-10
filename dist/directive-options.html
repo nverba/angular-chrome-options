@@ -42,7 +42,10 @@
   -->
 
   <label ng-switch-default>
-    <input type="{{ option.type }}" ng-model="options[category.id][option.id]" ng-value="option.value" debounce="{{ option.debounce }}">
+    <input  type="{{ option.type }}"
+            ng-model="options[category.id][option.id]"
+            ng-value="option.value"
+            ng-model-options="{ updateOn: 'default blur', debounce: {'default': 500, 'blur': 0} }">
     <span ng-bind="option.label"></span>
   </label>
 
