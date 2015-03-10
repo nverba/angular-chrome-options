@@ -23,12 +23,12 @@ Use `gulp build-sample` to move updated dist folder to sample-app under node_mod
 
 _Other node_module dependencies for sample-app need to be loaded separately, the sample-app folder is not submitted to Git, do not edit files there directly!!!_ use `gulp sample-watch` to auto compile any changes into this directory when in development.
 
-From sample-app root
-
+    // From sample-app root
+    
     npm install
-
-from project root
-
+    
+    // From project root
+    
     gulp dist-to-sample
 
 
