@@ -1,5 +1,8 @@
 ## angular-chrome-options
 
+__Example page generated with angular-chrome-options:__
+
+
 ![an angular chrome options generated page](/img/screenshot.png?raw=true "Generated options page")
 
 __angular-chrome-options__ is an experimental __AngularJS__ app that generates an options page for Chrome apps and extensions from a single JSON manifest located in the root of the application.
