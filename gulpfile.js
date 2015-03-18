@@ -7,8 +7,9 @@ var clean = require('gulp-clean');
 // The sample-app folder is not submitted to Git, do not edit files there directly!!!
 
 gulp.task('clean-sample-app', [], function() {
-  gulp.src("sample-app/node_modules/angular-chrome-options/**.*")
-      .pipe(clean());
+
+  return gulp.src("sample-app/node_modules/angular-chrome-options/**.*")
+    .pipe(clean());
 });
 
 gulp.task('build-sample', ['clean-sample-app'], function () {

@@ -1,5 +1,7 @@
 ## angular-chrome-options
 
+![an angular chrome options generated page](/img/screenshot.png?raw=true "Generated options page")
+
 __angular-chrome-options__ is an experimental __AngularJS__ app that generates an options page for Chrome apps and extensions from a single JSON manifest located in the root of the application.
 
 Checkout `options.json.sample` to see how to generate an options page.
@@ -24,11 +26,11 @@ Use `gulp build-sample` to move updated dist folder to sample-app under node_mod
 _Other node_module dependencies for sample-app need to be loaded separately, the sample-app folder is not submitted to Git, do not edit files there directly!!!_ use `gulp sample-watch` to auto compile any changes into this directory when in development.
 
     // From sample-app root
-    
+
     npm install
-    
+
     // From project root
-    
+
     gulp dist-to-sample
 
 
